@@ -34,6 +34,7 @@ e.g.
 
 # Pluck 
 
+```java
     @Test
     public void pluck() {
         Stooge moe = new Stooge("moe", 40);
@@ -41,9 +42,11 @@ e.g.
         Stooge curly = new Stooge("curly", 60);
         assertEquals(_("moe", "larry", "curly"), _(moe, larry, curly).pluck(Stooge::name));
     }
-    
+```
+
 # Zip
 
+```java
     @Test
     public void zip() {
         assertEquals(
@@ -51,7 +54,7 @@ e.g.
             _("moe", "larry", "curly").zip(_(30, 40, 50), _(true, false, false))
         );
     }
-    
+```
 Other examples in the test cases
 
 https://github.com/benjiman/underscore/blob/master/src/test/java/uk/co/benjiweber/underscore/ArrayFunctionsTest.java
