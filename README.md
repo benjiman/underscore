@@ -7,7 +7,7 @@ Mapping the underscore.js API from http://underscorejs.org/
 
 e.g.
 
-# Finding items where a property matches
+# Items where a property matches
 
 ```java
     @Test
