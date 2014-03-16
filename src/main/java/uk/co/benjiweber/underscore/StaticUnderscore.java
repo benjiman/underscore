@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
 import static java.lang.Math.abs;
 import static uk.co.benjiweber.underscore.Underscore._;
 
-public class StaticUnderscore {
+public class StaticUnderscore implements FunctionFunctions {
 
     public static <T> List<T> each(List<T> ts, Consumer<T> f) {
         return _(ts).each(f).unwrap();
