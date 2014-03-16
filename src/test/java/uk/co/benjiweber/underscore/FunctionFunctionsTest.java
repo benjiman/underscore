@@ -35,4 +35,22 @@ public class FunctionFunctionsTest {
 
         assertEquals("foobarbaz", appendBaz.apply("foo", "bar"));
     }
+
+    @Test
+    public void curry() {
+        Integer fifteen = Integer.valueOf(15);
+
+        BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+        Function<Integer, Integer> add5 = _.curry(add).apply(5);
+
+        assertEquals(fifteen, add5.apply(10));
+    }
+
+    @Test
+    public void curry_tri() {
+        TriFunction<String, String, String, String> concat = (a, b, c) -> a + b + c;
+        String result = _.curry(concat).apply("foo").apply("bar").apply("baz");
+
+        assertEquals("foobarbaz", result);
+    }
 }
