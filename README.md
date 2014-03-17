@@ -7,6 +7,32 @@ Mapping the underscore.js API from http://underscorejs.org/
 
 e.g.
 
+# Partial application
+
+```java
+    @Test
+    public void partial_placeholder() {
+        TriFunction<String, String, String, String> concat = (a, b, c) -> a + b + c;
+        BiFunction<String, String, String> plusSymbol = _.partial(concat, _, " + ", _);
+
+        assertEquals("5 + 10", plusSymbol.apply("5", "10"));
+    }
+```
+    
+# Curry
+
+```java
+    @Test
+    public void curry() {
+        Integer fifteen = Integer.valueOf(15);
+
+        BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+        Function<Integer, Integer> add5 = _.curry(add).apply(5);
+
+        assertEquals(fifteen, add5.apply(10));
+    }
+```
+
 # Items where a property matches
 
 ```java
@@ -59,3 +85,4 @@ Other examples in the test cases
 
 https://github.com/benjiman/underscore/blob/master/src/test/java/uk/co/benjiweber/underscore/ArrayFunctionsTest.java
 https://github.com/benjiman/underscore/blob/master/src/test/java/uk/co/benjiweber/underscore/CollectionFunctionsTest.java
+https://github.com/benjiman/underscore/blob/master/src/test/java/uk/co/benjiweber/underscore/FunctionFunctionsTest.java
