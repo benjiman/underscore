@@ -1,8 +1,6 @@
 package uk.co.benjiweber.underscore;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -197,5 +195,124 @@ public class StaticUnderscore implements FunctionFunctions {
     public <T>  Underscore<T> sample(List<T> ts, int num) {
         return _(ts).sample(num);
     }
-    
+
+    public <T> Optional<T> first(List<T> ts) {
+        return _(ts).first();
+    }
+
+    public <T> Optional<T> head(List<T> ts) {
+        return _(ts).head();
+    }
+
+    public <T> Optional<T> take(List<T> ts) {
+        return _(ts).take();
+    }
+
+    public <T> Underscore<T> initial(List<T> ts) {
+        return _(ts).initial();
+    }
+
+    public <T> Underscore<T> initial(List<T> ts, int n) {
+        return _(ts).initial(n);
+    }
+
+    public <T> Optional<T> last(List<T> ts) {
+        return _(ts).last();
+    }
+
+    public <T> Underscore<T> last(List<T> ts, int n) {
+        return _(ts).last(n);
+    }
+
+    public <T> Underscore<T> drop(List<T> ts) {
+        return _(ts).drop();
+    }
+
+    public <T> Underscore<T> drop(List<T> ts, int n) {
+        return _(ts).drop(n);
+    }
+
+    public <T> Underscore<T> tail(List<T> ts) {
+        return _(ts).tail();
+    }
+
+    public <T> Underscore<T> tail(List<T> ts, int n) {
+        return _(ts).tail(n);
+    }
+
+    public <T> Underscore<T> rest(List<T> ts) {
+        return _(ts).rest();
+    }
+
+    public <T> Underscore<T> rest(List<T> ts, int n) {
+        return _(ts).rest(n);
+    }
+
+    public <T> Underscore<T> compact(List<T> ts) {
+        return _(ts).compact();
+    }
+
+    public <T> List<T> without(List<T> ts, T... others) {
+        return _(ts).without(others);
+    }
+
+    public <T> Partitioned<T> partitionTyped(List<T> ts, Predicate<T> predicate) {
+        return _(ts).partitionTyped(predicate);
+    }
+
+    public <T> Underscore<Underscore<T>> partition(List<T> ts, Predicate<T> predicate) {
+        return _(ts).partition(predicate);
+    }
+
+    public <T> Underscore<T> push(List<T> ts, T t) {
+        return _(ts).push(t);
+    }
+
+    public <T> Underscore<T> append(List<T> ts, T t) {
+        return _(ts).append(t);
+    }
+
+    public <T> Underscore<T> prepend(List<T> ts, T t) {
+        return _(ts).prepend(t);
+    }
+
+    public <T> Underscore<T> union(List<T> ts, Underscore<T> t, Underscore<T>... others) {
+        return _(ts).union(t, others);
+    }
+
+    public <T> List<T> union(List<T> ts, Underscore<T> head ,Underscore<Underscore<T>> others) {
+        return _(ts).union(head, others);
+    }
+
+    public <T> Underscore<T> intersection(List<T> ts, Underscore<T>... others) {
+        return _(ts).intersection(others);
+    }
+
+    public <T> Underscore<T> difference(List<T> ts, Underscore<T>... others) {
+        return _(ts).difference(others);
+    }
+
+    public <T> Underscore<T> difference(List<T> ts, Underscore<T> head, List<Underscore<T>> others) {
+        return _(ts).difference(head, others);
+    }
+
+    public <T> Underscore<T> reverse(List<T> ts) {
+        return _(ts).reverse();
+    }
+
+    public <T> Underscore<T> uniq(List<T> ts) {
+        return _(ts).uniq();
+    }
+
+    public <T> Underscore<Underscore<?>> zip(List<T> ts, Underscore<?>... others) {
+        return _(ts).zip(others);
+    }
+
+    public <T,R> Map<T,R> object(List<T> ts, List<R> values) {
+        return _(ts).object(values);
+    }
+
+    public <T> int sortedIndex(List<T> ts, T value) {
+        return _(ts).sortedIndex(value);
+    }
 }
