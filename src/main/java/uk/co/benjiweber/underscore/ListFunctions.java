@@ -17,10 +17,6 @@ public interface ListFunctions<T> extends Iterable<T> {
         return _(unwrap());
     }
 
-    public static <K,V,R> Underscore<R> map(Map<K,V> map, BiFunction<V,K,R> f) {
-        return _(map.entrySet().stream().map(entry -> f.apply(entry.getValue(), entry.getKey())));
-    }
-
     default<R> Underscore<R> map(Function<T,R> mapper) {
         return _(unwrap().stream().map(mapper).collect(Collectors.<R>toList()));
     }
